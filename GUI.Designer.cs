@@ -1,5 +1,5 @@
 ﻿using System.Collections.Generic;
-namespace CM3D2_Updater {
+namespace MaidUpdater {
     public partial class GUI {
         /// <summary>
         /// Required designer variable.
@@ -25,33 +25,23 @@ namespace CM3D2_Updater {
         /// </summary>
         public void InitializeComponent() {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(GUI));
-            this.contentSelector = new System.Windows.Forms.ListBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.installButton = new System.Windows.Forms.Button();
             this.scanButt = new System.Windows.Forms.Button();
             this.verifyButt = new System.Windows.Forms.Button();
             this.consolePlaceholder = new System.Windows.Forms.RichTextBox();
+            this.contentSelector = new MaidUpdater.ListBoxEx();
             this.SuspendLayout();
-            // 
-            // contentSelector
-            // 
-            this.contentSelector.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.contentSelector.FormattingEnabled = true;
-            this.contentSelector.Location = new System.Drawing.Point(432, 25);
-            this.contentSelector.Name = "contentSelector";
-            this.contentSelector.Size = new System.Drawing.Size(145, 277);
-            this.contentSelector.TabIndex = 4;
-            this.contentSelector.SelectedIndexChanged += new System.EventHandler(this.contentSelector_SelectedIndexChanged);
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(429, 8);
+            this.label1.Location = new System.Drawing.Point(399, 8);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(98, 13);
+            this.label1.Size = new System.Drawing.Size(94, 13);
             this.label1.TabIndex = 5;
-            this.label1.Text = "Installable Content";
+            this.label1.Text = "Installable Content:";
             // 
             // label2
             // 
@@ -60,7 +50,7 @@ namespace CM3D2_Updater {
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(67, 13);
             this.label2.TabIndex = 6;
-            this.label2.Text = "Console logs";
+            this.label2.Text = "Console:";
             // 
             // installButton
             // 
@@ -76,9 +66,9 @@ namespace CM3D2_Updater {
             // scanButt
             // 
             this.scanButt.FlatStyle = System.Windows.Forms.FlatStyle.System;
-            this.scanButt.Location = new System.Drawing.Point(432, 309);
+            this.scanButt.Location = new System.Drawing.Point(402, 309);
             this.scanButt.Name = "scanButt";
-            this.scanButt.Size = new System.Drawing.Size(145, 23);
+            this.scanButt.Size = new System.Drawing.Size(175, 23);
             this.scanButt.TabIndex = 8;
             this.scanButt.Text = "Scan Directory";
             this.scanButt.UseVisualStyleBackColor = true;
@@ -97,13 +87,27 @@ namespace CM3D2_Updater {
             // consolePlaceholder
             // 
             this.consolePlaceholder.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.consolePlaceholder.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.consolePlaceholder.Enabled = false;
             this.consolePlaceholder.Location = new System.Drawing.Point(16, 25);
             this.consolePlaceholder.Name = "consolePlaceholder";
-            this.consolePlaceholder.Size = new System.Drawing.Size(410, 277);
+            this.consolePlaceholder.Size = new System.Drawing.Size(380, 277);
             this.consolePlaceholder.TabIndex = 10;
             this.consolePlaceholder.Text = "";
             this.consolePlaceholder.Visible = false;
+            // 
+            // contentSelector
+            // 
+            this.contentSelector.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.contentSelector.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.contentSelector.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.contentSelector.FormattingEnabled = true;
+            this.contentSelector.Location = new System.Drawing.Point(402, 25);
+            this.contentSelector.Name = "contentSelector";
+            this.contentSelector.SelectionMode = System.Windows.Forms.SelectionMode.MultiExtended;
+            this.contentSelector.Size = new System.Drawing.Size(175, 275);
+            this.contentSelector.TabIndex = 4;
+            this.contentSelector.SelectedIndexChanged += new System.EventHandler(this.contentSelector_SelectedIndexChanged);
             // 
             // GUI
             // 
@@ -122,14 +126,14 @@ namespace CM3D2_Updater {
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.Name = "GUI";
-            this.Text = "Custom Maid 3D 2 Content Installer";
+            this.Text = "Maid Updater";
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
-        public System.Windows.Forms.ListBox contentSelector;
+        public MaidUpdater.ListBoxEx contentSelector;
         public System.Windows.Forms.Label label1;
         public System.Windows.Forms.Label label2;
         public System.Windows.Forms.Button installButton;

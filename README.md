@@ -1,19 +1,17 @@
-# cm3d2-updater
+# MaidUpdater
 
-This is my first C# project so the code is probably inefficient/messy
+**Based on [this abandoned project](https://github.com/thepotatomaster/cm3d2-updater).**
 
-Anyways
-I started this project with the goal of simplifying dlc/update installing for cm3d2 as it took a while
-Right now it can only install one thing at a time but I have plans to add an install all/multi-select option
+## Do not use this right now. It's incomplete and will break your game install.
 
-Download: https://github.com/thepotatomaster/cm3d2-updater/raw/master/bin/Debug/CM3D2%20Updater.exe
+This is a tool that allows you to bulk install CM3D2 and COM3D2 updates and DLC packs.
+It aims to completely replicate the behavior of the original updaters,
+as well as giving you the ability to merge updates into a single pack.
 
-#Todo:
-1. Add multi-select and install all options
-2. Fix bug when the directory length is too long
-3. Add registry fixer
-4. Optimize code
-5. ???
-
-#Changelog: 
+# Changelog:
 v0.1: Initial release
+
+# License: 
+The person who wrote the original never put a license on it, and I doubt they care about the code anymore,
+so I've licensed it as [MIT](https://choosealicense.com/licenses/mit/). If the original creator has problems
+with that, feel free to reach out to me.

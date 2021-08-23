@@ -1,4 +1,4 @@
-﻿namespace CM3D2_Updater
+﻿namespace MaidUpdater
 {
     partial class Installer
     {

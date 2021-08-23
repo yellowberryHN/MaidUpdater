@@ -2,7 +2,7 @@ using System;
 using System.IO;
 using System.Windows.Forms;
 
-namespace CM3D2_Updater { //TODO: Allow installing multiple files (DO THIS!!!)
+namespace MaidUpdater { //TODO: Allow installing multiple files (DO THIS!!!)
     public partial class Installer : Form
     {
         public Installer()
@@ -51,7 +51,7 @@ namespace CM3D2_Updater { //TODO: Allow installing multiple files (DO THIS!!!)
                 }
             }
             this.Close();
-            Program.Log("Updating CM3D2 Update.lst"); //TODO
+            Program.Log("Updating CM3D2 Update.lst"); // TODO: Sanity check the shit out of this. Don't want to be breaking game installs.
             foreach (var content in Program.selected) {
                 if (!content.verified && !Program.hasVerified || content.verified) {
                     foreach (var item in content.updatelst) {
@@ -74,7 +74,7 @@ namespace CM3D2_Updater { //TODO: Allow installing multiple files (DO THIS!!!)
                 }
             }
             Program.Log("Writing to file");
-            File.WriteAllText(Program.installDir + @"\Update.lst", String.Join("\n", Program.installed));
+            File.WriteAllText(Program.installDir + @"\update.lst", string.Join("\n", Program.installed));
         }
     }
 }
