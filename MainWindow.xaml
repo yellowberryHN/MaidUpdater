@@ -1,12 +1,34 @@
-﻿<Window x:Class="MaidUpdater_WPF.MainWindow"
+﻿<Window x:Class="MaidUpdater.MainWindow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:MaidUpdater_WPF"
+        xmlns:local="clr-namespace:MaidUpdater"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="{Binding AppName}" Height="410" Width="600" MinHeight="410" MinWidth="600">
+    <Window.DataContext>
+        <local:MaidVM/>
+    </Window.DataContext>
     <Grid>
-        
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="50*"/>
+            <ColumnDefinition Width="25*"/>
+        </Grid.ColumnDefinitions>
+        <ComboBox x:Name="gameSelectedComboBox" Margin="10,0,10,10" Height="22" VerticalAlignment="Bottom" ItemsSource="{Binding GamesInstalled}" SelectedItem="{Binding SelectedGame}" SelectedIndex="0" Grid.ColumnSpan="2"/>
+        <ListBox x:Name="packsAvailableListBox" Margin="10,26,10,62" Grid.Column="1" ItemsSource="{Binding PacksAvailable}" SelectionMode="Extended">
+            <ListBox.ItemContainerStyle>
+                <Style TargetType="{x:Type ListBoxItem}">
+                    <Setter Property="IsEnabled" Value="{Binding Supported}"/>
+                </Style>
+            </ListBox.ItemContainerStyle>
+        </ListBox>
+        <Button x:Name="scanButton" Content="_Scan Directory" Margin="0,0,10,37" Height="20" VerticalAlignment="Bottom" Grid.Column="1" Command="{Binding ScanButtonCommand}" HorizontalAlignment="Right" Width="177"/>
+        <Label x:Name="packsAvailableLabel" Content="Available Content:" Margin="10,0" VerticalAlignment="Top" Height="26" RenderTransformOrigin="0.5,0.538" Grid.Column="1"/>
+        <Label x:Name="consoleLabel" Content="Console:" Margin="10,0" VerticalAlignment="Top" Height="26" RenderTransformOrigin="0.5,0.538" Grid.Column="0"/>
+        <TextBox x:Name="consoleTextBox" Margin="10,26,0,62" TextWrapping="Wrap" Text="{Binding AppLog}" IsReadOnly="True" ScrollViewer.VerticalScrollBarVisibility="Auto"/>
+        <Button x:Name="installButton" Content="_Install All" Margin="10,0,0,37" Height="20" VerticalAlignment="Bottom" Command="{Binding InstallButtonCommand}" CommandParameter="{Binding ElementName=packsAvailableListBox, Path=SelectedItems}" HorizontalAlignment="Left" Width="100"/>
+        <Button x:Name="verifyButton" Content="_Verify Packs" Margin="115,0,0,37" IsEnabled="{Binding SelectedItems.Count, ElementName=packsAvailableListBox, Mode=OneWay}" Command="{Binding VerifyButtonCommand}" CommandParameter="{Binding ElementName=packsAvailableListBox, Path=SelectedItems}" Height="20" VerticalAlignment="Bottom" HorizontalAlignment="Left" Width="100"/>
+        <Button x:Name="aboutButton" Content="_About..." Margin="220,0,0,37" Command="{Binding AboutButtonCommand}" Height="20" VerticalAlignment="Bottom" HorizontalAlignment="Left" Width="80"/>
+        <CheckBox x:Name="verboseCheckBox" Content="Extra Logs" Margin="305,0,0,39" Height="15" VerticalAlignment="Bottom" IsChecked="{Binding VerboseLogging}" HorizontalAlignment="Left" Width="80"/>
     </Grid>
 </Window>

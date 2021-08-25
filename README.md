@@ -17,7 +17,7 @@ as well as giving you the ability to merge updates into a single pack.
 
 - [ ] Multi-threaded, so the app doesn't freeze
 - [ ] Add storage space safety check (user doesn't have enough disk space)
-- [ ] Transition from WinForms to WPF
+- [x] Transition from WinForms to WPF
 - [ ] Prompt user to fix/add registry keys for game installs if broken/not present
 - [ ] Improve UX
 - [ ] Export merged update bundles, for convenience's sake
