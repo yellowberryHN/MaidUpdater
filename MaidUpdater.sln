@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.31424.327
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MaidUpdater", "MaidUpdater.csproj", "{1CA38AEC-48D5-430C-BA60-BC6A36BBBBDA}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{1CA38AEC-48D5-430C-BA60-BC6A36BBBBDA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1CA38AEC-48D5-430C-BA60-BC6A36BBBBDA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1CA38AEC-48D5-430C-BA60-BC6A36BBBBDA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1CA38AEC-48D5-430C-BA60-BC6A36BBBBDA}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {081FEC14-8966-4D73-8D97-07B0A1097B1D}
+	EndGlobalSection
+EndGlobal
