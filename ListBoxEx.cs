@@ -120,12 +120,12 @@ namespace MaidUpdater
                 return;
             }
 
-            if (e.Index != ListBoxEx.NoMatches)
+            if (e.Index != NoMatches)
             {
                 object item = this.Items[e.Index];
                 if (disabledIndices.Contains(e.Index))
                 {
-                    e.Graphics.FillRectangle(SystemBrushes.ControlLight, e.Bounds);
+                    e.Graphics.FillRectangle(SystemBrushes.ControlLight, e.Bounds); ;
                     if (item != null)
                     {
                         e.Graphics.DrawString(item.ToString(), e.Font, Brushes.Red, e.Bounds);
@@ -135,7 +135,7 @@ namespace MaidUpdater
                 {
                     if (SelectionMode == SelectionMode.None)
                     {
-                        e.Graphics.FillRectangle(SystemBrushes.ControlLight, e.Bounds);
+                        e.Graphics.FillRectangle(SystemBrushes.Window, e.Bounds);
                         if (item != null)
                         {
                             e.Graphics.DrawString(item.ToString(), e.Font, SystemBrushes.WindowText, e.Bounds);
@@ -154,7 +154,7 @@ namespace MaidUpdater
                         }
                         else
                         {
-                            e.Graphics.FillRectangle(SystemBrushes.ControlLight, e.Bounds);
+                            e.Graphics.FillRectangle(SystemBrushes.Window, e.Bounds);
                             if (item != null)
                             {
                                 e.Graphics.DrawString(item.ToString(), e.Font, SystemBrushes.WindowText, e.Bounds);
